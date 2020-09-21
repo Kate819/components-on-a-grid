@@ -1,5 +1,8 @@
 html {
   box-sizing: border-box;
+  background-color: #f2f1ed;
+  font-family: Georgia, serif;
+  line-height: 1.5;
 }
 
 *,
@@ -8,11 +11,95 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+    "first"
+    "second";
+  padding: 1rem;
+}
+
 img {
   width: 100%;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin: 0;
+  margin-bottom: 0;
+  grid-area: first;
+}
+
+.logo {
+  width: 15rem;
+}
+
+header img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+a {
+  color: #fff;
+}
+
+main {
+  display: grid;
+  grid-area: second;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+h2 {
+  color: #30658d;
+}
+
+header nav {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  z-index: 1;
+}
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+li {
+  font-size: 2rem;
+  font-family: "Patua One", sans-serif;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+h1 {
+  padding-left: 1rem;
+  padding-top: 2.8rem;
+  grid-column: 1;
+  grid-row: 3 / -1;
+  z-index: 1;
+}
+
+figure {
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Patua One", sans-serif;
 }
